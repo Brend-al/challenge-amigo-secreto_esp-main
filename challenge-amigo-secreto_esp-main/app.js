@@ -10,6 +10,13 @@ function agregarAmigo() {
     return;
   }
 
+  const nombre = /^[a-zA-Z\s]+$/;
+  if (!nombre.test(nuevoAmigo)) {
+    alert("El nombre solo debe contener letras y espacios");
+    Amigos.value = "";
+    return;
+  }
+
   amigos.push(nuevoAmigo);
   console.log(amigos);
 
